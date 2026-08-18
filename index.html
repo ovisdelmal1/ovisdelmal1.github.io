@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Daniel Ovando Martinez - Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-container": "#bc563a",
+                "surface-container-lowest": "#ffffff",
+                "surface-container": "#f5ece7",
+                "tertiary-container": "#8a704c",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed-variant": "#4c4733",
+                "error-container": "#ffdad6",
+                "inverse-surface": "#34302c",
+                "inverse-on-surface": "#f8efea",
+                "primary-fixed-dim": "#ffb5a1",
+                "outline": "#89726c",
+                "outline-variant": "#ddc0b9",
+                "on-tertiary-container": "#fffbff",
+                "on-surface": "#1e1b18",
+                "primary": "#2b5c8f", /* Cambiado a un tono azul/tech */
+                "on-primary": "#ffffff",
+                "secondary": "#645e49",
+                "primary-fixed": "#ffdbd1",
+                "surface-bright": "#fff8f5",
+                "on-primary-fixed-variant": "#802a11",
+                "tertiary": "#705836",
+                "tertiary-fixed-dim": "#e1c298",
+                "on-tertiary-fixed": "#291800",
+                "on-surface-variant": "#56423d",
+                "on-secondary-fixed": "#1f1c0b",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed-dim": "#cec6ad",
+                "error": "#ba1a1a",
+                "on-background": "#1e1b18",
+                "surface-container-highest": "#e9e1dc",
+                "on-primary-fixed": "#3b0900",
+                "secondary-fixed": "#ebe2c8",
+                "surface-variant": "#e9e1dc",
+                "on-primary-container": "#fffbff",
+                "on-secondary": "#ffffff",
+                "surface": "#fff8f5",
+                "surface-tint": "#9f4126",
+                "background": "#f8f9fa",
+                "on-tertiary-fixed-variant": "#594323",
+                "secondary-container": "#e8dfc5",
+                "tertiary-fixed": "#ffddb2",
+                "surface-dim": "#e1d8d4",
+                "surface-container-low": "#fbf2ed",
+                "surface-container-high": "#efe6e2",
+                "on-secondary-container": "#68634d",
+                "on-error": "#ffffff",
+                "inverse-primary": "#ffb5a1"
+            },
+            "fontFamily": {
+                "headline-md": ["Plus Jakarta Sans"],
+                "headline-lg-mobile": ["Plus Jakarta Sans"],
+                "label-sm": ["Plus Jakarta Sans"],
+                "headline-xl": ["Plus Jakarta Sans"],
+                "headline-lg": ["Plus Jakarta Sans"],
+                "label-md": ["Plus Jakarta Sans"],
+                "body-lg": ["Plus Jakarta Sans"],
+                "body-sm": ["Plus Jakarta Sans"],
+                "body-md": ["Plus Jakarta Sans"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { background-color: #f8f9fa; color: #1e1b18; }
+        .btn-primary { background-color: #2c3e50; color: #ffffff; transition: all 0.2s ease-in-out; }
+        .btn-primary:hover { background-color: #1a252f; }
+        .btn-secondary { background-color: transparent; border: 1px solid #2c3e50; color: #2c3e50; transition: all 0.2s ease-in-out; }
+        .btn-secondary:hover { border-color: #1a252f; background-color: #e9ecef; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8f9fa; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/95 border-b border-outline-variant transition-all duration-300 backdrop-blur-sm" id="navbar">
+    <div class="flex justify-between items-center px-4 md:px-12 py-6 max-w-7xl mx-auto">
+        <a class="font-headline-md text-2xl text-on-background flex items-center gap-2 group font-bold" href="#hero">
+            <span class="material-symbols-outlined text-[#2c3e50] transition-transform">terminal</span>
+            Daniel Ovando
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="font-label-sm text-xs text-on-background uppercase tracking-wider font-bold" href="#hero">Inicio</a>
+            <a class="font-label-sm text-xs text-on-surface-variant hover:text-on-background transition-colors uppercase tracking-wider font-bold" href="#projects">Proyectos</a>
+            <a class="font-label-sm text-xs text-on-surface-variant hover:text-on-background transition-colors uppercase tracking-wider font-bold" href="#contact">Contacto</a>
+        </div>
+        <!-- Botón Descargar CV -->
+        <a href="Daniel_Ovando_Martinez_CV.pdf" download class="hidden md:flex btn-primary px-6 py-2 rounded-full font-label-sm text-xs uppercase tracking-wider font-bold">
+            Descargar CV
+        </a>
+    </div>
+</nav>
+
+<main class="w-full flex flex-col items-center">
+    <!-- Hero Section -->
+    <section class="w-full min-h-screen flex items-center justify-center relative pt-32 pb-32 px-4 md:px-12" id="hero">
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 flex flex-col items-start gap-8 animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-on-surface-variant font-label-sm text-xs uppercase bg-white shadow-sm font-bold">
+                    <span class="relative flex h-2 w-2">
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    Disponible para Trabajar
+                </div>
+                <h1 class="text-4xl md:text-6xl text-on-background leading-tight font-bold">
+                    Hola, soy <span class="text-[#2c3e50]">Daniel Ovando</span>
+                </h1>
+                <p class="text-lg text-on-surface-variant max-w-xl">
+                    Systems Analyst & Backend Developer. Estudiante de Ingeniería Informática apasionado por diseñar bases de datos robustas, construir APIs escalables aplicando Clean Architecture y resolver problemas complejos en el backend.
+                </p>
+                <div class="flex items-center gap-6 mt-4">
+                    <a class="btn-primary px-8 py-4 rounded-full font-label-sm text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm font-bold" href="#projects">
+                        Ver Proyectos <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+                    </a>
+                    <a class="btn-secondary px-8 py-4 rounded-full font-label-sm text-xs uppercase tracking-wider font-bold" href="https://github.com/ovisdelmal1" target="_blank">
+                        Mi GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="flex-1 w-full flex justify-center animate-fade-in-up delay-200 mt-16 md:mt-0">
+                <div class="relative w-full max-w-md aspect-square bg-white rounded-2xl overflow-hidden p-4 shadow-lg border border-gray-100">
+                    <!-- Imagen decorativa tipo tech/código -->
+                    <div class="bg-cover bg-center w-full h-full rounded-[12px] transition-all duration-700" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="w-full py-32 px-4 md:px-12 bg-white" id="projects">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="flex flex-col items-start gap-4 mb-20 animate-fade-in-up">
+                <h2 class="text-3xl font-bold text-on-background">Proyectos Destacados</h2>
+                <p class="text-lg text-on-surface-variant max-w-2xl">
+                    Una selección de mis desarrollos backend, aplicando buenas prácticas, bases de datos relacionales/NoSQL y frameworks modernos.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors duration-300 rounded-2xl overflow-hidden group flex flex-col animate-fade-in-up delay-100 cursor-pointer shadow-sm">
+                    <div class="p-8 flex flex-col flex-grow gap-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="border border-gray-300 bg-white text-gray-700 px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold">Java</span>
+                            <span class="border border-gray-300 bg-white text-gray-700 px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold">Spring Boot</span>
+                            <span class="border border-gray-300 bg-white text-gray-700 px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold">MySQL</span>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-grow">
+                            <h3 class="text-xl font-bold text-[#2c3e50]">E-Commerce RESTful API</h3>
+                            <p class="text-sm text-gray-600">
+                                Desarrollo de una API segura para una plataforma de comercio electrónico. Gestiona la autenticación de usuarios, catálogo de productos y procesamiento de órdenes aplicando principios de Clean Architecture.
+                            </p>
+                        </div>
+                        <a href="https://github.com/ovisdelmal1" target="_blank" class="flex items-center gap-2 text-[#2c3e50] text-xs uppercase tracking-wider mt-2 group-hover:gap-4 transition-all font-bold">
+                            Ver Código <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors duration-300 rounded-2xl overflow-hidden group flex flex-col animate-fade-in-up delay-200 cursor-pointer shadow-sm">
+                    <div class="p-8 flex flex-col flex-grow gap-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="border border-gray-300 bg-white text-gray-700 px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold">Node.js</span>
+                            <span class="border border-gray-300 bg-white text-gray-700 px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold">MongoDB</span>
+                            <span class="border border-gray-300 bg-white text-gray-700 px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold">Express</span>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-grow">
+                            <h3 class="text-xl font-bold text-[#2c3e50]">Task Management Backend</h3>
+                            <p class="text-sm text-gray-600">
+                                Construcción de un microservicio robusto para la asignación y seguimiento de tareas. Diseñado con esquemas NoSQL escalables para soportar alta concurrencia de datos no estructurados.
+                            </p>
+                        </div>
+                        <a href="https://github.com/ovisdelmal1" target="_blank" class="flex items-center gap-2 text-[#2c3e50] text-xs uppercase tracking-wider mt-2 group-hover:gap-4 transition-all font-bold">
+                            Ver Código <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Freelance) -->
+                <div class="border border-gray-200 bg-gray-50 hover:bg-gray-100 transition-colors duration-300 rounded-2xl overflow-hidden group flex flex-col animate-fade-in-up delay-300 cursor-pointer shadow-sm">
+                    <div class="p-8 flex flex-col flex-grow gap-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="border border-gray-300 bg-white text-gray-700 px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold">Arquitectura Limpia</span>
+                            <span class="border border-gray-300 bg-white text-gray-700 px-3 py-1.5 rounded-full text-[10px] uppercase tracking-wider font-bold">Git</span>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-grow">
+                            <h3 class="text-xl font-bold text-[#2c3e50]">Freelance Backend Solutions</h3>
+                            <p class="text-sm text-gray-600">
+                                Trabajo remoto desarrollando APIs a medida para clientes. Traducción de requisitos de negocio a especificaciones técnicas, optimización de bases de datos y despliegue en entornos Linux/Docker.
+                            </p>
+                        </div>
+                        <a href="https://github.com/ovisdelmal1" target="_blank" class="flex items-center gap-2 text-[#2c3e50] text-xs uppercase tracking-wider mt-2 group-hover:gap-4 transition-all font-bold">
+                            Ver Perfil <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-16 bg-[#2c3e50] px-4 md:px-12" id="contact">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 animate-fade-in-up">
+        <div class="flex flex-col items-center md:items-start gap-2">
+            <span class="text-2xl font-bold text-white flex items-center gap-2">
+                <span class="material-symbols-outlined text-white">terminal</span> Daniel Ovando
+            </span>
+            <span class="text-sm text-gray-400">© 2024 Portfolio Personal. Buenos Aires, Argentina.</span>
+        </div>
+        <div class="flex items-center gap-8">
+            <a class="text-sm text-gray-300 hover:text-white uppercase tracking-wider transition-colors font-bold" href="mailto:mdanielovando@gmail.com">
+                Email
+            </a>
+            <a class="text-sm text-gray-300 hover:text-white uppercase tracking-wider transition-colors font-bold" href="https://github.com/ovisdelmal1" target="_blank">
+                GitHub
+            </a>
+            <a class="text-sm text-gray-300 hover:text-white uppercase tracking-wider transition-colors font-bold" href="https://linkedin.com/in/tu-linkedin" target="_blank">
+                LinkedIn
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-fade-in-up').forEach((el) => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+    });
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            navbar.classList.add('shadow-md');
+        } else {
+            navbar.classList.remove('shadow-md');
+        }
+    });
+</script>
+</body>
+</html>
